@@ -8,6 +8,8 @@ import hashlib
 # table_name = "game"
 # con = SimpleSQLite("game.sqlite", "w")
 #
+from main import play
+
 
 def signup():
     name = input("Enter name: ")
@@ -25,6 +27,7 @@ def signup():
             f.write(hash1)
         f.close()
         print("You have registered successfully!")
+        play()
     # elif username == stored_username:
     #     print("you have signed up!")
     else:
@@ -32,7 +35,7 @@ def signup():
 
 
 def login():
-    username = input("Enter email: ")
+    username = input("Enter username: ")
     pwd = input("Enter password: ")
     auth = pwd.encode()
     auth_hash = hashlib.md5(auth).hexdigest()
@@ -41,5 +44,6 @@ def login():
     f.close()
     if username == stored_username and auth_hash == stored_pwd:
         print("Logged in Successfully!")
+        play()
     else:
         print("Login failed! \n")

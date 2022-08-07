@@ -14,14 +14,16 @@ def stat(username):
             losses = f.write(str(scoreboard['system']//3) + "\n")
             win_rate = f.write(str(int(wins)/int(losses)))
         f.close()
+    else:
+        print("you are not detected person")
 
 
 def user_panel():
     print("1.play with system")
     print("2.stats of player")
     print("3. logout")
-    option = int(input("Enter your choice: "))
-    match option:
+    opt = int(input("Enter your choice: "))
+    match opt:
         case 1:
             play()
         case 2:

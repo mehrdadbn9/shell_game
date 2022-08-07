@@ -7,7 +7,7 @@ def get_user_choice():
     """
     get and validate player input, recursively
     """
-   
+
     user_input = input('Enter your choice please (r, p, s): ')
     if user_input not in GAME_CHOICES:
         print("Oops!!, wrong choice, try again please...")
@@ -65,6 +65,7 @@ def play():
     Main play ground handler
     """
     result = {'user': 0, 'system': 0}
+    user_game_set = input("please enter number set that you wanna: ")
 
     while result['user'] < 3 and result['system'] < 3:
         user_choice = get_user_choice()
@@ -89,5 +90,6 @@ def play():
         play()
 
 
-user_game_set = input("please enter number set that you wanna: ")
-play()
+if __name__ == '__main__':
+#     user_game_set = input("please enter number set that you wanna: ")
+    play()
